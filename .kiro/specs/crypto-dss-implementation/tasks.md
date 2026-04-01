@@ -28,33 +28,33 @@
   - [x] 3.2 Cập nhật `apps/backend/src/app.module.ts` — ConfigModule.forRoot (isGlobal), TypeOrmModule.forRootAsync (PostgreSQL), ScheduleModule.forRoot
   - [x] 3.3 Tạo `apps/backend/src/main.ts` — bootstrap NestJS app với CORS enabled
 
-- [-] 4. Git commit & push Phase 1
-  - [-] 4.1 `git add . && git commit -m "feat: initialize Nx monorepo with shared types and PostgreSQL setup" && git push`
+- [x] 4. Git commit & push Phase 1
+  - [x] 4.1 `git add . && git commit -m "feat: initialize Nx monorepo with shared types and PostgreSQL setup" && git push`
 
 ## Phase 2 — Data Collection
 
-- [ ] 5. Binance Service
+- [x] 5. Binance Service
      Tham khảo desig sau : /home/sown/workplace/projects/crypto-dss/docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md
 
-  - [~] 5.1 Tạo `apps/backend/src/modules/binance/binance.types.ts` — BinanceRawKline type
-  - [~] 5.2 Tạo `apps/backend/src/modules/binance/binance.service.ts` — fetchKlines() gọi GET /api/v3/klines, chuyển đổi raw kline → OhlcvCandle
-  - [~] 5.3 Tạo `apps/backend/src/modules/binance/binance.module.ts` — export BinanceService
+  - [x] 5.1 Tạo `apps/backend/src/modules/binance/binance.types.ts` — BinanceRawKline type
+  - [x] 5.2 Tạo `apps/backend/src/modules/binance/binance.service.ts` — fetchKlines() gọi GET /api/v3/klines, chuyển đổi raw kline → OhlcvCandle
+  - [x] 5.3 Tạo `apps/backend/src/modules/binance/binance.module.ts` — export BinanceService
 
-- [ ] 6. OHLCV Entity + Service
+- [x] 6. OHLCV Entity + Service
 
-  - [~] 6.1 Tạo `apps/backend/src/modules/ohlcv/ohlcv.entity.ts` — TypeORM entity bảng ohlcv, unique constraint (symbol, timeframe, openTime), decimal(18,8)
-  - [~] 6.2 Tạo `apps/backend/src/modules/ohlcv/ohlcv.service.ts` — upsertCandles (orIgnore), getCandles (DESC openTime), getLatestCandle, deleteOlderThan
-  - [~] 6.3 Tạo `apps/backend/src/modules/ohlcv/ohlcv.module.ts` — import TypeOrmModule.forFeature, export OhlcvService
+  - [x] 6.1 Tạo `apps/backend/src/modules/ohlcv/ohlcv.entity.ts` — TypeORM entity bảng ohlcv, unique constraint (symbol, timeframe, openTime), decimal(18,8)
+  - [x] 6.2 Tạo `apps/backend/src/modules/ohlcv/ohlcv.service.ts` — upsertCandles (orIgnore), getCandles (DESC openTime), getLatestCandle, deleteOlderThan
+  - [x] 6.3 Tạo `apps/backend/src/modules/ohlcv/ohlcv.module.ts` — import TypeOrmModule.forFeature, export OhlcvService
 
-- [ ] 7. OHLCV Scheduler
+- [x] 7. OHLCV Scheduler
      Tham khảo desig sau : /home/sown/workplace/projects/crypto-dss/docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md
 
-  - [~] 7.1 Tạo `apps/backend/src/modules/ohlcv/ohlcv.scheduler.ts` — onModuleInit (fetch 500 nến lịch sử), cron 30s (fetch 3 nến mới), cron weekly (xóa > 2 năm), error isolation per timeframe
-  - [~] 7.2 Cập nhật `apps/backend/src/modules/ohlcv/ohlcv.module.ts` — thêm OhlcvScheduler, import BinanceModule
-  - [~] 7.3 Cập nhật `apps/backend/src/app.module.ts` — import OhlcvModule
+  - [x] 7.1 Tạo `apps/backend/src/modules/ohlcv/ohlcv.scheduler.ts` — onModuleInit (fetch 500 nến lịch sử), cron 30s (fetch 3 nến mới), cron weekly (xóa > 2 năm), error isolation per timeframe
+  - [x] 7.2 Cập nhật `apps/backend/src/modules/ohlcv/ohlcv.module.ts` — thêm OhlcvScheduler, import BinanceModule
+  - [x] 7.3 Cập nhật `apps/backend/src/app.module.ts` — import OhlcvModule
 
-- [ ] 8. Git commit & push Phase 2
-  - [~] 8.1 `git add . && git commit -m "feat: add Binance service, OHLCV entity/service/scheduler" && git push`
+- [-] 8. Git commit & push Phase 2
+  - [-] 8.1 `git add . && git commit -m "feat: add Binance service, OHLCV entity/service/scheduler" && git push`
 
 ## Phase 3 — Analysis Engine
 
