@@ -89,48 +89,48 @@
   - [x] 11.6 Tạo `apps/backend/src/modules/signals/signals.module.ts` — import AnalyzerModule, TypeOrmModule.forFeature; export all
   - [x] 11.7 Cập nhật `apps/backend/src/app.module.ts` — import IndicatorsModule, AnalyzerModule, SignalsModule
 
-- [-] 12. Git commit & push Phase 3
-  - [-] 12.1 `git add . && git commit -m "feat: add indicators, rule engine, DeepSeek, analyzer, signals modules" && git push`
+- [x] 12. Git commit & push Phase 3
+  - [x] 12.1 `git add . && git commit -m "feat: add indicators, rule engine, DeepSeek, analyzer, signals modules" && git push`
 
 ## Phase 4 — Frontend Dashboard
 
-- [ ] 13. Frontend Setup + API Layer
+- [x] 13. Frontend Setup + API Layer
 
-  - [~] 13.1 Tạo `apps/frontend/src/styles/index.css` — CSS variables (colors, fonts, spacing), scan-line texture, reset styles
-  - [~] 13.2 Tạo `apps/frontend/src/styles/components.css` — shared component styles (signal-card, indicator-panel, topbar, etc.)
-  - [~] 13.3 Tạo `apps/frontend/src/styles/animations.css` — keyframes (pulse-live, toast-enter, skeleton-shimmer, fadeInUp)
-  - [~] 13.4 Tạo `apps/frontend/src/api/signals.api.ts` — fetchLatestSignal, fetchSignalHistory, generateSignal (axios)
-  - [~] 13.5 Tạo `apps/frontend/src/hooks/useSignalSocket.ts` — socket.io-client hook, lắng nghe signal-changed, trả về {latestSignal, isConnected}
+  - [x] 13.1 Tạo `apps/frontend/src/styles/index.css` — CSS variables (colors, fonts, spacing), scan-line texture, reset styles
+  - [x] 13.2 Tạo `apps/frontend/src/styles/components.css` — shared component styles (signal-card, indicator-panel, topbar, etc.)
+  - [x] 13.3 Tạo `apps/frontend/src/styles/animations.css` — keyframes (pulse-live, toast-enter, skeleton-shimmer, fadeInUp)
+  - [x] 13.4 Tạo `apps/frontend/src/api/signals.api.ts` — fetchLatestSignal, fetchSignalHistory, generateSignal (axios)
+  - [x] 13.5 Tạo `apps/frontend/src/hooks/useSignalSocket.ts` — socket.io-client hook, lắng nghe signal-changed, trả về {latestSignal, isConnected}
 
-- [ ] 14. Core Components
+- [x] 14. Core Components
 
-  - [~] 14.1 Tạo `apps/frontend/src/components/SignalBadge.tsx` — inline badge BUY/SELL/HOLD với màu tương ứng
-  - [~] 14.2 Tạo `apps/frontend/src/components/ConfidenceGauge.tsx` — SVG arc 240°, màu theo signal, hiển thị % ở trung tâm
-  - [~] 14.3 Tạo `apps/frontend/src/components/TimeframeSelector.tsx` — 6 nút chọn timeframe
-  - [~] 14.4 Tạo `apps/frontend/src/components/Topbar.tsx` — sticky header: logo, price ticker, LIVE status, TimeframeSelector
-  - [~] 14.5 Tạo `apps/frontend/src/components/SignalCard.tsx` — hero component: ConfidenceGauge, SignalType 64px, Rule vs AI, AI Reasoning, Refresh button
-  - [~] 14.6 Tạo `apps/frontend/src/components/IndicatorRow.tsx` — label + value + status dot, null → "—"
-  - [~] 14.7 Tạo `apps/frontend/src/components/RsiRow.tsx` — RSI với mini progress bar, overbought/oversold zones
-  - [~] 14.8 Tạo `apps/frontend/src/components/PatternsTab.tsx` — grid badge cho candlestick patterns (active/inactive)
-  - [~] 14.9 Tạo `apps/frontend/src/components/IndicatorPanel.tsx` — 5 tabs (TREND, MOMENTUM, VOLATILITY, VOLUME, PATTERNS)
+  - [x] 14.1 Tạo `apps/frontend/src/components/SignalBadge.tsx` — inline badge BUY/SELL/HOLD với màu tương ứng
+  - [x] 14.2 Tạo `apps/frontend/src/components/ConfidenceGauge.tsx` — SVG arc 240°, màu theo signal, hiển thị % ở trung tâm
+  - [x] 14.3 Tạo `apps/frontend/src/components/TimeframeSelector.tsx` — 6 nút chọn timeframe
+  - [x] 14.4 Tạo `apps/frontend/src/components/Topbar.tsx` — sticky header: logo, price ticker, LIVE status, TimeframeSelector
+  - [x] 14.5 Tạo `apps/frontend/src/components/SignalCard.tsx` — hero component: ConfidenceGauge, SignalType 64px, Rule vs AI, AI Reasoning, Refresh button
+  - [x] 14.6 Tạo `apps/frontend/src/components/IndicatorRow.tsx` — label + value + status dot, null → "—"
+  - [x] 14.7 Tạo `apps/frontend/src/components/RsiRow.tsx` — RSI với mini progress bar, overbought/oversold zones
+  - [x] 14.8 Tạo `apps/frontend/src/components/PatternsTab.tsx` — grid badge cho candlestick patterns (active/inactive)
+  - [x] 14.9 Tạo `apps/frontend/src/components/IndicatorPanel.tsx` — 5 tabs (TREND, MOMENTUM, VOLATILITY, VOLUME, PATTERNS)
 
-- [ ] 15. History + Toast + Skeleton
+- [x] 15. History + Toast + Skeleton
 
-  - [~] 15.1 Tạo `apps/frontend/src/components/SignalHistory.tsx` — bảng lịch sử: TIME, TIMEFRAME, SIGNAL, CONFIDENCE bar, RULE, AI
+  - [x] 15.1 Tạo `apps/frontend/src/components/SignalHistory.tsx` — bảng lịch sử: TIME, TIMEFRAME, SIGNAL, CONFIDENCE bar, RULE, AI
 
-  - [~] 15.2 Tạo `apps/frontend/src/components/SignalToast.tsx` — toast notification: slide-in, auto-dismiss 8s, progress bar, close button
-  - [~] 15.3 Tạo skeleton components (SkeletonSignalCard, SkeletonIndicatorPanel) — shimmer animation
+  - [x] 15.2 Tạo `apps/frontend/src/components/SignalToast.tsx` — toast notification: slide-in, auto-dismiss 8s, progress bar, close button
+  - [x] 15.3 Tạo skeleton components (SkeletonSignalCard, SkeletonIndicatorPanel) — shimmer animation
 
-- [ ] 16. Dashboard Page + App Assembly
+- [x] 16. Dashboard Page + App Assembly
       Tham khảo UI sau
       /home/sown/workplace/projects/crypto-dss/docs/frontend-dashboard-design.md
       /home/sown/workplace/projects/crypto-dss/docs/frontend-dashboard-prototype.html
 
-  - [~] 16.1 Tạo `apps/frontend/src/pages/Dashboard.tsx` — layout grid: Topbar + Main (SignalCard + IndicatorPanel) + SignalHistory, responsive breakpoints
-  - [~] 16.2 Cập nhật `apps/frontend/src/App.tsx` — import Dashboard, setup global styles
-  - [~] 16.3 Cập nhật `apps/frontend/src/main.tsx` — render App
-  - [~] 16.4 Cập nhật Tailwind config — extend fonts (Bebas Neue, JetBrains Mono, Barlow), colors (buy, sell, hold, terminal), keyframes, animations
+  - [x] 16.1 Tạo `apps/frontend/src/pages/Dashboard.tsx` — layout grid: Topbar + Main (SignalCard + IndicatorPanel) + SignalHistory, responsive breakpoints
+  - [x] 16.2 Cập nhật `apps/frontend/src/App.tsx` — import Dashboard, setup global styles
+  - [x] 16.3 Cập nhật `apps/frontend/src/main.tsx` — render App
+  - [x] 16.4 Cập nhật Tailwind config — extend fonts (Bebas Neue, JetBrains Mono, Barlow), colors (buy, sell, hold, terminal), keyframes, animations
 
-- [ ] 17. Git commit & push Phase 4
-  - [~] 17.1 `git add . && git commit -m "feat: add Quantex Terminal frontend dashboard with all components" && git push`
+- [-] 17. Git commit & push Phase 4
+  - [-] 17.1 `git add . && git commit -m "feat: add Quantex Terminal frontend dashboard with all components" && git push`
     ll;ll
