@@ -5,6 +5,9 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OhlcvModule } from '../modules/ohlcv/ohlcv.module';
+import { IndicatorsModule } from '../modules/indicators/indicators.module';
+import { AnalyzerModule } from '../modules/analyzer/analyzer.module';
+import { SignalsModule } from '../modules/signals/signals.module';
 
 @Module({
   imports: [
@@ -25,6 +28,9 @@ import { OhlcvModule } from '../modules/ohlcv/ohlcv.module';
     }),
     ScheduleModule.forRoot(),
     OhlcvModule,
+    IndicatorsModule,
+    AnalyzerModule,
+    SignalsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

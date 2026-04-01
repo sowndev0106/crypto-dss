@@ -53,44 +53,44 @@
   - [x] 7.2 Cập nhật `apps/backend/src/modules/ohlcv/ohlcv.module.ts` — thêm OhlcvScheduler, import BinanceModule
   - [x] 7.3 Cập nhật `apps/backend/src/app.module.ts` — import OhlcvModule
 
-- [-] 8. Git commit & push Phase 2
-  - [-] 8.1 `git add . && git commit -m "feat: add Binance service, OHLCV entity/service/scheduler" && git push`
+- [x] 8. Git commit & push Phase 2
+  - [x] 8.1 `git add . && git commit -m "feat: add Binance service, OHLCV entity/service/scheduler" && git push`
 
 ## Phase 3 — Analysis Engine
 
-- [ ] 9. Indicators Service
+- [x] 9. Indicators Service
      Tham khảo desig sau : /home/sown/workplace/projects/crypto-dss/docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md
 
-  - [~] 9.1 Tạo `apps/backend/src/modules/indicators/trend.indicators.ts` — calcTrend(): EMA(9,21,50,200), DEMA 9, TEMA 9, MACD(12/26/9), ADX(14), PSAR, Ichimoku(9/26/52/26)
-  - [~] 9.2 Tạo `apps/backend/src/modules/indicators/momentum.indicators.ts` — calcMomentum(): RSI(14), StochRSI(14/14/3/3), Stochastic(14/3), Williams %R(14), CCI(20), ROC(12)
-  - [~] 9.3 Tạo `apps/backend/src/modules/indicators/volatility.indicators.ts` — calcVolatility(): Bollinger Bands(20/2), ATR(14)
-  - [~] 9.4 Tạo `apps/backend/src/modules/indicators/volume.indicators.ts` — calcVolume(): OBV, VWAP, MFI(14), CMF(20)
-  - [~] 9.5 Tạo `apps/backend/src/modules/indicators/patterns.indicators.ts` — calcPatterns(): Doji, Hammer, Bullish/Bearish Engulfing, Morning/Evening Star
-  - [~] 9.6 Tạo `apps/backend/src/modules/indicators/indicators.service.ts` — calculate() orchestrate 5 hàm helper, trả về AllIndicators
-  - [~] 9.7 Tạo `apps/backend/src/modules/indicators/indicators.module.ts` — export IndicatorsService, import OhlcvModule
+  - [x] 9.1 Tạo `apps/backend/src/modules/indicators/trend.indicators.ts` — calcTrend(): EMA(9,21,50,200), DEMA 9, TEMA 9, MACD(12/26/9), ADX(14), PSAR, Ichimoku(9/26/52/26)
+  - [x] 9.2 Tạo `apps/backend/src/modules/indicators/momentum.indicators.ts` — calcMomentum(): RSI(14), StochRSI(14/14/3/3), Stochastic(14/3), Williams %R(14), CCI(20), ROC(12)
+  - [x] 9.3 Tạo `apps/backend/src/modules/indicators/volatility.indicators.ts` — calcVolatility(): Bollinger Bands(20/2), ATR(14)
+  - [x] 9.4 Tạo `apps/backend/src/modules/indicators/volume.indicators.ts` — calcVolume(): OBV, VWAP, MFI(14), CMF(20)
+  - [x] 9.5 Tạo `apps/backend/src/modules/indicators/patterns.indicators.ts` — calcPatterns(): Doji, Hammer, Bullish/Bearish Engulfing, Morning/Evening Star
+  - [x] 9.6 Tạo `apps/backend/src/modules/indicators/indicators.service.ts` — calculate() orchestrate 5 hàm helper, trả về AllIndicators
+  - [x] 9.7 Tạo `apps/backend/src/modules/indicators/indicators.module.ts` — export IndicatorsService, import OhlcvModule
 
-- [ ] 10. Rule Engine + DeepSeek + Analyzer
+- [x] 10. Rule Engine + DeepSeek + Analyzer
       Tham khảo desig sau : /home/sown/workplace/projects/crypto-dss/docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md
 
-  - [~] 10.1 Tạo `apps/backend/src/modules/analyzer/rule-engine.service.ts` — weighted scoring, BUY/SELL/HOLD thresholds, null handling, trả về {signal, confidence}
-  - [~] 10.2 Tạo `apps/backend/src/modules/analyzer/prompt-builder.ts` — buildPrompt() tóm tắt multi-timeframe indicators, yêu cầu JSON response
-  - [~] 10.3 Tạo `apps/backend/src/modules/analyzer/deepseek.service.ts` — OpenAI client với baseURL deepseek, analyze(), error fallback HOLD/0
-  - [~] 10.4 Tạo `apps/backend/src/modules/analyzer/analyzer.service.ts` — analyzeTimeframe(): getCandles → indicators → Promise.all([rule, deepseek]) → weighted combine (40%/60%)
-  - [~] 10.5 Tạo `apps/backend/src/modules/analyzer/analyzer.module.ts` — import IndicatorsModule, OhlcvModule; export AnalyzerService
+  - [x] 10.1 Tạo `apps/backend/src/modules/analyzer/rule-engine.service.ts` — weighted scoring, BUY/SELL/HOLD thresholds, null handling, trả về {signal, confidence}
+  - [x] 10.2 Tạo `apps/backend/src/modules/analyzer/prompt-builder.ts` — buildPrompt() tóm tắt multi-timeframe indicators, yêu cầu JSON response
+  - [x] 10.3 Tạo `apps/backend/src/modules/analyzer/deepseek.service.ts` — OpenAI client với baseURL deepseek, analyze(), error fallback HOLD/0
+  - [x] 10.4 Tạo `apps/backend/src/modules/analyzer/analyzer.service.ts` — analyzeTimeframe(): getCandles → indicators → Promise.all([rule, deepseek]) → weighted combine (40%/60%)
+  - [x] 10.5 Tạo `apps/backend/src/modules/analyzer/analyzer.module.ts` — import IndicatorsModule, OhlcvModule; export AnalyzerService
 
-- [ ] 11. Signals Module
+- [x] 11. Signals Module
       Tham khảo desig sau : /home/sown/workplace/projects/crypto-dss/docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md
 
-  - [~] 11.1 Tạo `apps/backend/src/modules/signals/signals.entity.ts` — TypeORM entity bảng signals, JSONB indicators column
-  - [~] 11.2 Tạo `apps/backend/src/modules/signals/signals.service.ts` — saveIfChanged (change detection), getLatest, getHistory (pagination), pruneOldSignals (max 200)
-  - [~] 11.3 Tạo `apps/backend/src/modules/signals/signals.controller.ts` — POST /signals/generate, GET /signals/latest, GET /signals/history
-  - [~] 11.4 Tạo `apps/backend/src/modules/signals/signals.gateway.ts` — WebSocket gateway, signal-changed event, subscribe by symbol+timeframe, log connect/disconnect
-  - [~] 11.5 Tạo `apps/backend/src/modules/signals/signals.scheduler.ts` — cron 30s: analyzeTimeframe cho 6 TF → saveIfChanged → emit nếu changed
-  - [~] 11.6 Tạo `apps/backend/src/modules/signals/signals.module.ts` — import AnalyzerModule, TypeOrmModule.forFeature; export all
-  - [~] 11.7 Cập nhật `apps/backend/src/app.module.ts` — import IndicatorsModule, AnalyzerModule, SignalsModule
+  - [x] 11.1 Tạo `apps/backend/src/modules/signals/signals.entity.ts` — TypeORM entity bảng signals, JSONB indicators column
+  - [x] 11.2 Tạo `apps/backend/src/modules/signals/signals.service.ts` — saveIfChanged (change detection), getLatest, getHistory (pagination), pruneOldSignals (max 200)
+  - [x] 11.3 Tạo `apps/backend/src/modules/signals/signals.controller.ts` — POST /signals/generate, GET /signals/latest, GET /signals/history
+  - [x] 11.4 Tạo `apps/backend/src/modules/signals/signals.gateway.ts` — WebSocket gateway, signal-changed event, subscribe by symbol+timeframe, log connect/disconnect
+  - [x] 11.5 Tạo `apps/backend/src/modules/signals/signals.scheduler.ts` — cron 30s: analyzeTimeframe cho 6 TF → saveIfChanged → emit nếu changed
+  - [x] 11.6 Tạo `apps/backend/src/modules/signals/signals.module.ts` — import AnalyzerModule, TypeOrmModule.forFeature; export all
+  - [x] 11.7 Cập nhật `apps/backend/src/app.module.ts` — import IndicatorsModule, AnalyzerModule, SignalsModule
 
-- [ ] 12. Git commit & push Phase 3
-  - [~] 12.1 `git add . && git commit -m "feat: add indicators, rule engine, DeepSeek, analyzer, signals modules" && git push`
+- [-] 12. Git commit & push Phase 3
+  - [-] 12.1 `git add . && git commit -m "feat: add indicators, rule engine, DeepSeek, analyzer, signals modules" && git push`
 
 ## Phase 4 — Frontend Dashboard
 
