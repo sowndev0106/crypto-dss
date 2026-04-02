@@ -1,4 +1,22 @@
-import { EMA, DEMA, TEMA, MACD, ADX, PSAR, IchimokuCloud } from 'technicalindicators';
+import { EMA, MACD, ADX, PSAR, IchimokuCloud } from 'technicalindicators';
+
+function calcDEMA(period: number, values: number[]): number[] {
+    const ema1 = EMA.calculate({ period, values });
+    if (ema1.length < period) return [];
+    const ema2 = EMA.calculate({ period, values: ema1 });
+    return ema2.map((e2, i) => 2 * ema1[i + (ema1.length - ema2.length)] - e2);
+}
+
+function calcTEMA(period: number, values: number[]): number[] {
+    const ema1 = EMA.calculate({ period, values });
+    if (ema1.length < period) return [];
+    const ema2 = EMA.calculate({ period, values: ema1 });
+    if (ema2.length < period) return [];
+    const ema3 = EMA.calculate({ period, values: ema2 });
+    const offset1 = ema1.length - ema3.length;
+    const offset2 = ema2.length - ema3.length;
+    return ema3.map((e3, i) => 3 * ema1[i + offset1] - 3 * ema2[i + offset2] + e3);
+}
 import { TrendIndicators } from 'shared-types';
 import { OhlcvEntity } from '../ohlcv/ohlcv.entity';
 
@@ -34,13 +52,13 @@ export function calcTrend(candles: OhlcvEntity[]): TrendIndicators {
 
     let dema9: number | null = null;
     try {
-        const r = DEMA.calculate({ period: 9, values: closes });
+        const r = calcDEMA(9, closes);
         dema9 = r.length > 0 ? r[r.length - 1] : null;
     } catch { dema9 = null; }
 
     let tema9: number | null = null;
     try {
-        const r = TEMA.calculate({ period: 9, values: closes });
+        const r = calcTEMA(9, closes);
         tema9 = r.length > 0 ? r[r.length - 1] : null;
     } catch { tema9 = null; }
 
