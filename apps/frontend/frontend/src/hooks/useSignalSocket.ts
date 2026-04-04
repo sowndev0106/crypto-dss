@@ -10,7 +10,11 @@ export function useSignalSocket(symbol: string, timeframe: string) {
     const socketRef = useRef<Socket | null>(null);
 
     useEffect(() => {
-        const socket = io(SOCKET_URL, { transports: ['websocket'] });
+        const socket = io(SOCKET_URL, {
+            transports: ['websocket'],
+            reconnectionDelay: 1000,
+            reconnectionAttempts: 5,
+        });
         socketRef.current = socket;
 
         socket.on('connect', () => {

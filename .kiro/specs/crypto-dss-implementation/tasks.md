@@ -131,6 +131,6 @@
   - [x] 16.3 Cập nhật `apps/frontend/src/main.tsx` — render App
   - [x] 16.4 Cập nhật Tailwind config — extend fonts (Bebas Neue, JetBrains Mono, Barlow), colors (buy, sell, hold, terminal), keyframes, animations
 
-- [-] 17. Git commit & push Phase 4
-  - [-] 17.1 `git add . && git commit -m "feat: add Quantex Terminal frontend dashboard with all components" && git push`
-    ll;ll
+- [x] 17. Git commit & push Phase 4
+  - [x] 17.1 `git add . && git commit -m "feat: add Quantex Terminal frontend dashboard with all components" && git push`
+        ll;ll

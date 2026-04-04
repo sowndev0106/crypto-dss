@@ -4,6 +4,7 @@ import { OhlcvService } from '../ohlcv/ohlcv.service';
 import { IndicatorsService } from '../indicators/indicators.service';
 import { RuleEngineService } from './rule-engine.service';
 import { DeepSeekService } from './deepseek.service';
+import { MarketContextService } from '../market/market-context.service';
 
 @Injectable()
 export class AnalyzerService {
@@ -12,6 +13,7 @@ export class AnalyzerService {
         private readonly indicatorsService: IndicatorsService,
         private readonly ruleEngineService: RuleEngineService,
         private readonly deepSeekService: DeepSeekService,
+        private readonly marketContextService: MarketContextService,
     ) { }
 
     async analyzeTimeframe(symbol: string, timeframe: string): Promise<Omit<SignalResult, 'id' | 'createdAt'>> {
@@ -24,10 +26,13 @@ export class AnalyzerService {
         // 3. Build multi-timeframe data map
         const data = new Map([[timeframe, indicators]]);
 
-        // 4. Run rule engine and deepseek in parallel
+        // 4. Fetch market context and run rule engine + deepseek in parallel
         const [ruleResult, deepseekResult] = await Promise.all([
             Promise.resolve(this.ruleEngineService.analyze(indicators)),
-            this.deepSeekService.analyze(data),
+            (async () => {
+                const marketContext = await this.marketContextService.getContext();
+                return this.deepSeekService.analyze(data, marketContext);
+            })(),
         ]);
 
         // 5. Combine confidence: rule * 0.4 + deepseek * 0.6

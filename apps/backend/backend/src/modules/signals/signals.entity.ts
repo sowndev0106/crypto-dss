@@ -13,16 +13,16 @@ export class SignalEntity {
     @Column({ length: 5 })
     timeframe: string;
 
-    @Column({ length: 4 })
+    @Column({ type: 'varchar', length: 4 })
     signal: SignalType;
 
     @Column({ type: 'decimal', precision: 3, scale: 2 })
     confidence: number;
 
-    @Column({ length: 4, nullable: true })
+    @Column({ type: 'varchar', length: 4, nullable: true })
     ruleSignal: SignalType | null;
 
-    @Column({ length: 4, nullable: true })
+    @Column({ type: 'varchar', length: 4, nullable: true })
     deepseekSignal: SignalType | null;
 
     @Column({ type: 'text', nullable: true })

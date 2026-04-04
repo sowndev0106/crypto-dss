@@ -50,10 +50,20 @@ export interface CandlestickPatterns {
     eveningStar: boolean;
 }
 
+export interface RiskHints {
+    stopLoss: number;
+    takeProfit: number;
+    riskRewardRatio: number;
+}
+
 export interface AllIndicators {
     trend: TrendIndicators;
     momentum: MomentumIndicators;
     volatility: VolatilityIndicators;
     volume: VolumeIndicators;
     patterns: CandlestickPatterns;
+    closePrice: number | null;
+    supportLevels: number[];
+    resistanceLevels: number[];
+    riskHints: RiskHints | null;
 }

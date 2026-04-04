@@ -8,6 +8,10 @@ import { OhlcvModule } from '../modules/ohlcv/ohlcv.module';
 import { IndicatorsModule } from '../modules/indicators/indicators.module';
 import { AnalyzerModule } from '../modules/analyzer/analyzer.module';
 import { SignalsModule } from '../modules/signals/signals.module';
+import { MarketModule } from '../modules/market/market.module';
+import { AlertModule } from '../modules/alert/alert.module';
+import { OhlcvEntity } from '../modules/ohlcv/ohlcv.entity';
+import { SignalEntity } from '../modules/signals/signals.entity';
 
 @Module({
   imports: [
@@ -21,7 +25,7 @@ import { SignalsModule } from '../modules/signals/signals.module';
         username: configService.get('DATABASE_USER', 'postgres'),
         password: configService.get('DATABASE_PASSWORD', 'postgres'),
         database: configService.get('DATABASE_NAME', 'crypto_dss'),
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [OhlcvEntity, SignalEntity],
         synchronize: true,
       }),
       inject: [ConfigService],
@@ -31,6 +35,8 @@ import { SignalsModule } from '../modules/signals/signals.module';
     IndicatorsModule,
     AnalyzerModule,
     SignalsModule,
+    MarketModule,
+    AlertModule,
   ],
   controllers: [AppController],
   providers: [AppService],

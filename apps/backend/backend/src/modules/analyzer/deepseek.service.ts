@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
 import { AllIndicators, SignalType } from 'shared-types';
 import { buildPrompt } from './prompt-builder';
+import { MarketContext } from '../market/market.types';
 
 @Injectable()
 export class DeepSeekService {
@@ -18,9 +19,10 @@ export class DeepSeekService {
 
     async analyze(
         data: Map<string, AllIndicators>,
+        marketContext?: MarketContext,
     ): Promise<{ signal: SignalType; confidence: number; reasoning: string }> {
         try {
-            const prompt = buildPrompt(data);
+            const prompt = buildPrompt(data, marketContext);
 
             const response = await this.client.chat.completions.create({
                 model: 'deepseek-chat',
@@ -28,7 +30,8 @@ export class DeepSeekService {
                 temperature: 0.1,
             });
 
-            const content = response.choices[0]?.message?.content ?? '';
+            const raw = response.choices[0]?.message?.content ?? '';
+            const content = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
             const parsed = JSON.parse(content) as {
                 signal: string;
                 confidence: number;
@@ -49,7 +52,7 @@ export class DeepSeekService {
             };
         } catch (error) {
             this.logger.error('DeepSeek API error', error);
-            return { signal: SignalType.HOLD, confidence: 0, reasoning: 'API error' };
+            return { signal: SignalType.HOLD, confidence: 0, reasoning: '' };
         }
     }
 }

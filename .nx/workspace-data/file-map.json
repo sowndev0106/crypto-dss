@@ -3,13 +3,24 @@
   "nxVersion": "19.8.14",
   "deps": {
     "@nestjs/common": "^10.0.2",
+    "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
-    "axios": "^1.6.0",
+    "@nestjs/platform-socket.io": "^11.1.17",
+    "@nestjs/schedule": "^6.1.1",
+    "@nestjs/typeorm": "^11.0.0",
+    "@nestjs/websockets": "^11.1.17",
+    "axios": "^1.14.0",
+    "lightweight-charts": "^5.1.0",
+    "openai": "^6.33.0",
+    "pg": "^8.20.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
+    "socket.io-client": "^4.8.3",
+    "technicalindicators": "^3.1.0",
+    "typeorm": "^0.3.28",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
@@ -107,44 +118,148 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "package-lock.json",
-        "hash": "9909212731088376248"
+        "file": "dist/libs/shared-types/shared-types/src/ohlcv.types.js.map",
+        "hash": "7459894368142389023"
       },
       {
-        "file": "docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md",
-        "hash": "4737506947611769562"
+        "file": "dist/apps/backend/backend/assets/.gitkeep",
+        "hash": "3244421341483603138"
       },
       {
-        "file": "docs/superpowers/specs/CLAUDE.md",
-        "hash": "2363214118875333748"
+        "file": "dist/libs/shared-types/shared-types/src/indicator.types.d.ts",
+        "hash": "4110611766356853762"
       },
       {
-        "file": "tsconfig.base.json",
-        "hash": "3592178632515121412"
+        "file": ".claude/skills/frontend-playwright/SKILL.md",
+        "hash": "13607962197708731522"
       },
       {
-        "file": "nx.json",
-        "hash": "18195325384074942584"
+        "file": "dist/libs/shared-types/shared-types/src/signal.types.js.map",
+        "hash": "9605673830128757691"
       },
       {
-        "file": ".kiro/specs/crypto-dss-implementation/tasks.md",
-        "hash": "10833678549885877989"
+        "file": "dist/libs/shared-types/shared-types/src/ohlcv.types.d.ts",
+        "hash": "9827268388925636958"
+      },
+      {
+        "file": "eslint.config.js",
+        "hash": "2478217381773231556"
       },
       {
         "file": ".kiro/specs/crypto-dss-implementation/.config.kiro",
         "hash": "4265759267325464225"
       },
       {
-        "file": ".gitignore",
-        "hash": "7663861978715868291"
+        "file": ".kiro/specs/crypto-dss-implementation/requirements.md",
+        "hash": "9141138131721986331"
       },
       {
         "file": "jest.config.ts",
         "hash": "3494843969422251966"
       },
       {
-        "file": "eslint.config.js",
-        "hash": "2478217381773231556"
+        "file": ".kiro/specs/crypto-dss-enhancements/design.md",
+        "hash": "5452131408402217664"
+      },
+      {
+        "file": "dist/apps/backend/backend/main.js",
+        "hash": "12560308242774400255"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/indicator.types.js.map",
+        "hash": "17933543564376028185"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "5784320843896187165"
+      },
+      {
+        "file": ".kiro/specs/crypto-dss-enhancements/.config.kiro",
+        "hash": "13721958192848046296"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/ohlcv.types.js",
+        "hash": "5581548985802938382"
+      },
+      {
+        "file": ".kiro/specs/crypto-dss-implementation/design.md",
+        "hash": "15159017877589088482"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/index.js",
+        "hash": "3319735938300203470"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/package.json",
+        "hash": "3392994992781167128"
+      },
+      {
+        "file": "dist/apps/backend/backend/package-lock.json",
+        "hash": "10062768150211242902"
+      },
+      {
+        "file": "nx.json",
+        "hash": "18195325384074942584"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "3592178632515121412"
+      },
+      {
+        "file": "docs/superpowers/plans/2026-04-02-crypto-dss-implementation.md",
+        "hash": "4737506947611769562"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/signal.types.js",
+        "hash": "14634877769906735201"
+      },
+      {
+        "file": "README.md",
+        "hash": "9779694986873300236"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "18444129276915948538"
+      },
+      {
+        "file": "dist/apps/backend/backend/package.json",
+        "hash": "5291940913644800396"
+      },
+      {
+        "file": ".kiro/specs/crypto-dss-enhancements/tasks.md",
+        "hash": "12160463386697633744"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/README.md",
+        "hash": "12456306990606966813"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/index.d.ts",
+        "hash": "7703435707133899499"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "10066300031063478629"
+      },
+      {
+        "file": "docs/superpowers/specs/CLAUDE.md",
+        "hash": "2363214118875333748"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/signal.types.d.ts",
+        "hash": "17819977137384804884"
+      },
+      {
+        "file": ".kiro/specs/crypto-dss-implementation/tasks.md",
+        "hash": "11388252452725466634"
+      },
+      {
+        "file": ".kiro/settings/mcp.json",
+        "hash": "3174847762777060044"
       },
       {
         "file": "docs/frontend-dashboard-design.md",
@@ -155,43 +270,354 @@
         "hash": "14688272390704683536"
       },
       {
-        "file": "docs/frontend-dashboard-prototype.html",
-        "hash": "5665053105712302038"
+        "file": ".kiro/specs/crypto-dss-enhancements/requirements.md",
+        "hash": "17271879351237361169"
       },
       {
-        "file": ".kiro/specs/crypto-dss-implementation/design.md",
-        "hash": "15159017877589088482"
+        "file": "package-lock.json",
+        "hash": "10946889492833778560"
       },
       {
-        "file": ".vscode/extensions.json",
-        "hash": "10066300031063478629"
+        "file": "dist/libs/shared-types/shared-types/src/index.js.map",
+        "hash": "12832027327737932471"
+      },
+      {
+        "file": "package.json",
+        "hash": "59062302041746958"
+      },
+      {
+        "file": "dist/libs/shared-types/shared-types/src/indicator.types.js",
+        "hash": "2329729878119749689"
       },
       {
         "file": ".prettierrc",
         "hash": "16267754514737964994"
       },
       {
-        "file": ".vscode/settings.json",
-        "hash": "18444129276915948538"
-      },
-      {
-        "file": ".kiro/specs/crypto-dss-implementation/requirements.md",
-        "hash": "9141138131721986331"
-      },
-      {
-        "file": "README.md",
-        "hash": "9779694986873300236"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9430166341120122740"
-      },
-      {
-        "file": "package.json",
-        "hash": "17810709746730671109"
+        "file": "docs/frontend-dashboard-prototype.html",
+        "hash": "5665053105712302038"
       }
     ],
     "projectFileMap": {
+      "frontend-frontend": [
+        {
+          "file": "apps/frontend/frontend/eslint.config.js",
+          "hash": "3769833203182662347",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/index.html",
+          "hash": "2323699249478598756"
+        },
+        {
+          "file": "apps/frontend/frontend/jest.config.ts",
+          "hash": "4040123938241034392"
+        },
+        {
+          "file": "apps/frontend/frontend/project.json",
+          "hash": "16050360358393362588"
+        },
+        {
+          "file": "apps/frontend/frontend/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/frontend/frontend/src/api/signals.api.ts",
+          "hash": "3946607974990624775",
+          "deps": [
+            "npm:axios",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/app/app.module.css",
+          "hash": "8887387885984320532"
+        },
+        {
+          "file": "apps/frontend/frontend/src/app/app.spec.tsx",
+          "hash": "14024072814186379895",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/app/app.tsx",
+          "hash": "5954058218059691375"
+        },
+        {
+          "file": "apps/frontend/frontend/src/app/nx-welcome.tsx",
+          "hash": "2348102959109701629"
+        },
+        {
+          "file": "apps/frontend/frontend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/AlertPanel.tsx",
+          "hash": "3350275814947742621",
+          "deps": [
+            "npm:react",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/BacktestingPanel.tsx",
+          "hash": "493045925878542718",
+          "deps": [
+            "npm:react",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/CandlestickChart.tsx",
+          "hash": "10677143583587502502",
+          "deps": [
+            "npm:react",
+            "npm:lightweight-charts",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/ChartPanel.tsx",
+          "hash": "16823322973111611957",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/ConfidenceGauge.tsx",
+          "hash": "13507418136579289025",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/ConfluenceView.tsx",
+          "hash": "696025197490353689",
+          "deps": [
+            "npm:react",
+            "npm:axios",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/IndicatorPanel.tsx",
+          "hash": "15662755399141358273",
+          "deps": [
+            "npm:react",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/IndicatorRow.tsx",
+          "hash": "11859100936128266916"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/MarketContextPanel.tsx",
+          "hash": "5365653931236654310",
+          "deps": [
+            "npm:react",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/PatternsTab.tsx",
+          "hash": "8719344558547404031",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/PriceTicker.tsx",
+          "hash": "750319223174145595",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/RiskManagementPanel.tsx",
+          "hash": "7353373599472259214",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/RsiRow.tsx",
+          "hash": "2187155222380142614"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SignalBadge.tsx",
+          "hash": "11698786203895654833",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SignalCard.tsx",
+          "hash": "1046381383130870034",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SignalHistory.tsx",
+          "hash": "12651604833893014599",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SignalToast.tsx",
+          "hash": "8462564806308083601",
+          "deps": [
+            "npm:react",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SkeletonIndicatorPanel.tsx",
+          "hash": "2597393782279637406"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/SkeletonSignalCard.tsx",
+          "hash": "6102172370167967928"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/TimeframeSelector.tsx",
+          "hash": "3840470339244130249"
+        },
+        {
+          "file": "apps/frontend/frontend/src/components/Topbar.tsx",
+          "hash": "6215444145655207369",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/hooks/useSignalSocket.ts",
+          "hash": "1927179954820275171",
+          "deps": [
+            "npm:react",
+            "npm:socket.io-client",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/main.tsx",
+          "hash": "4731961929376199421",
+          "deps": [
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/pages/Dashboard.tsx",
+          "hash": "866435089037823470",
+          "deps": [
+            "npm:react",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/frontend/frontend/src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/frontend/frontend/src/styles/animations.css",
+          "hash": "17809269585496962617"
+        },
+        {
+          "file": "apps/frontend/frontend/src/styles/components.css",
+          "hash": "7248250886731028218"
+        },
+        {
+          "file": "apps/frontend/frontend/src/styles/index.css",
+          "hash": "17887205940514142677"
+        },
+        {
+          "file": "apps/frontend/frontend/tsconfig.app.json",
+          "hash": "6208278882108140805"
+        },
+        {
+          "file": "apps/frontend/frontend/tsconfig.json",
+          "hash": "14914432187709619859"
+        },
+        {
+          "file": "apps/frontend/frontend/tsconfig.spec.json",
+          "hash": "2037765505023514234"
+        },
+        {
+          "file": "apps/frontend/frontend/vite.config.ts",
+          "hash": "15059930447667534037",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "shared-types-shared-types": [
+        {
+          "file": "libs/shared-types/shared-types/README.md",
+          "hash": "12456306990606966813"
+        },
+        {
+          "file": "libs/shared-types/shared-types/eslint.config.js",
+          "hash": "2368977605256145413",
+          "deps": [
+            "npm:jsonc-eslint-parser"
+          ]
+        },
+        {
+          "file": "libs/shared-types/shared-types/jest.config.ts",
+          "hash": "2418757763085230387"
+        },
+        {
+          "file": "libs/shared-types/shared-types/package.json",
+          "hash": "17303280094693570643",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "libs/shared-types/shared-types/project.json",
+          "hash": "17460067990313529778"
+        },
+        {
+          "file": "libs/shared-types/shared-types/src/index.ts",
+          "hash": "7703435707133899499"
+        },
+        {
+          "file": "libs/shared-types/shared-types/src/indicator.types.ts",
+          "hash": "6459872338737486632"
+        },
+        {
+          "file": "libs/shared-types/shared-types/src/lib/shared-types-shared-types.spec.ts",
+          "hash": "2280983543203052873"
+        },
+        {
+          "file": "libs/shared-types/shared-types/src/ohlcv.types.ts",
+          "hash": "10160814512146698543"
+        },
+        {
+          "file": "libs/shared-types/shared-types/src/signal.types.ts",
+          "hash": "11249037124719619438"
+        },
+        {
+          "file": "libs/shared-types/shared-types/tsconfig.json",
+          "hash": "1098465750514412960"
+        },
+        {
+          "file": "libs/shared-types/shared-types/tsconfig.lib.json",
+          "hash": "5554291030212586824"
+        },
+        {
+          "file": "libs/shared-types/shared-types/tsconfig.spec.json",
+          "hash": "9110660443763673899"
+        }
+      ],
       "backend-backend-e2e": [
         {
           "file": "apps/backend/backend-e2e/eslint.config.js",
@@ -236,56 +662,376 @@
           "hash": "8081058164965064295"
         }
       ],
-      "shared-types-shared-types": [
+      "backend-backend": [
         {
-          "file": "libs/shared-types/shared-types/README.md",
-          "hash": "12456306990606966813"
+          "file": "apps/backend/backend/.env",
+          "hash": "5354078718873247204"
         },
         {
-          "file": "libs/shared-types/shared-types/eslint.config.js",
-          "hash": "2368977605256145413",
+          "file": "apps/backend/backend/eslint.config.js",
+          "hash": "14131162355527991697"
+        },
+        {
+          "file": "apps/backend/backend/jest.config.ts",
+          "hash": "7061322357606729110"
+        },
+        {
+          "file": "apps/backend/backend/project.json",
+          "hash": "4690325010761503882"
+        },
+        {
+          "file": "apps/backend/backend/src/app/app.controller.spec.ts",
+          "hash": "9499997688052526633",
           "deps": [
-            "npm:jsonc-eslint-parser"
+            "npm:@nestjs/testing"
           ]
         },
         {
-          "file": "libs/shared-types/shared-types/jest.config.ts",
-          "hash": "2418757763085230387"
-        },
-        {
-          "file": "libs/shared-types/shared-types/package.json",
-          "hash": "17303280094693570643",
+          "file": "apps/backend/backend/src/app/app.controller.ts",
+          "hash": "9005150069945785676",
           "deps": [
-            "npm:tslib"
+            "npm:@nestjs/common"
           ]
         },
         {
-          "file": "libs/shared-types/shared-types/project.json",
-          "hash": "17460067990313529778"
+          "file": "apps/backend/backend/src/app/app.module.ts",
+          "hash": "6735912974228442483",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/schedule"
+          ]
         },
         {
-          "file": "libs/shared-types/shared-types/src/index.ts",
-          "hash": "1305246076650821523"
+          "file": "apps/backend/backend/src/app/app.service.spec.ts",
+          "hash": "8587461140686713758",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
         },
         {
-          "file": "libs/shared-types/shared-types/src/lib/shared-types-shared-types.spec.ts",
-          "hash": "2280983543203052873"
+          "file": "apps/backend/backend/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
         },
         {
-          "file": "libs/shared-types/shared-types/src/lib/shared-types-shared-types.ts",
-          "hash": "15116728003991095437"
+          "file": "apps/backend/backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
         },
         {
-          "file": "libs/shared-types/shared-types/tsconfig.json",
-          "hash": "1098465750514412960"
+          "file": "apps/backend/backend/src/main.ts",
+          "hash": "1404911218760095326",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
         },
         {
-          "file": "libs/shared-types/shared-types/tsconfig.lib.json",
-          "hash": "5554291030212586824"
+          "file": "apps/backend/backend/src/modules/alert/alert.controller.ts",
+          "hash": "17353014175104391645",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
         },
         {
-          "file": "libs/shared-types/shared-types/tsconfig.spec.json",
+          "file": "apps/backend/backend/src/modules/alert/alert.module.ts",
+          "hash": "3333869106349524888",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/alert/alert.service.ts",
+          "hash": "16378931614412034332",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/alert/alert.types.ts",
+          "hash": "7633541540040763619"
+        },
+        {
+          "file": "apps/backend/backend/src/modules/analyzer/analyzer.module.ts",
+          "hash": "552384086380013555",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/analyzer/analyzer.service.ts",
+          "hash": "14124934563788500671",
+          "deps": [
+            "npm:@nestjs/common",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/analyzer/deepseek.service.ts",
+          "hash": "11427945829455462512",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:openai",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/analyzer/prompt-builder.ts",
+          "hash": "2896279771240160855",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/analyzer/rule-engine.service.ts",
+          "hash": "7833594817017271245",
+          "deps": [
+            "npm:@nestjs/common",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/binance/binance.module.ts",
+          "hash": "13369449993362310819",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/binance/binance.service.ts",
+          "hash": "8596706271233114867",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:axios",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/binance/binance.types.ts",
+          "hash": "10224355294808101695"
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/indicators.module.ts",
+          "hash": "8186262689564658571",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/indicators.service.ts",
+          "hash": "26868233273736735",
+          "deps": [
+            "npm:@nestjs/common",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/momentum.indicators.ts",
+          "hash": "9719516402792403553",
+          "deps": [
+            "npm:technicalindicators",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/patterns.indicators.ts",
+          "hash": "1407015439794970822",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/risk.indicators.ts",
+          "hash": "9454632318804772587",
+          "deps": [
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/sr.indicators.ts",
+          "hash": "6088686736893494922"
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/trend.indicators.ts",
+          "hash": "16944747739058689655",
+          "deps": [
+            "npm:technicalindicators",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/volatility.indicators.ts",
+          "hash": "499100859020516676",
+          "deps": [
+            "npm:technicalindicators",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/indicators/volume.indicators.ts",
+          "hash": "2838201617306779406",
+          "deps": [
+            "npm:technicalindicators",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/market/market-context.service.ts",
+          "hash": "2679078851503039553",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/market/market.controller.ts",
+          "hash": "3221952081884884242",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/market/market.module.ts",
+          "hash": "7095658521260355056",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/market/market.types.ts",
+          "hash": "17832483534156010601"
+        },
+        {
+          "file": "apps/backend/backend/src/modules/market/volume-profile.service.ts",
+          "hash": "13385442589473901615",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/ohlcv/ohlcv.controller.ts",
+          "hash": "12646748468650722117",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/ohlcv/ohlcv.entity.ts",
+          "hash": "14920964683054459788",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/ohlcv/ohlcv.module.ts",
+          "hash": "14402953449718246851",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/ohlcv/ohlcv.scheduler.ts",
+          "hash": "17558615870286881622",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/schedule"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/ohlcv/ohlcv.service.ts",
+          "hash": "14976758030408711827",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/backtesting.service.ts",
+          "hash": "15190656305051322255",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.controller.ts",
+          "hash": "14277316501634212823",
+          "deps": [
+            "npm:@nestjs/common",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.entity.ts",
+          "hash": "8964028590393214405",
+          "deps": [
+            "npm:typeorm",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.gateway.ts",
+          "hash": "3243474562900895351",
+          "deps": [
+            "npm:@nestjs/websockets",
+            "npm:socket.io",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.module.ts",
+          "hash": "5682336034104359503",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.scheduler.ts",
+          "hash": "12969795991223738405",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/schedule"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/src/modules/signals/signals.service.ts",
+          "hash": "13265619065253926442",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "shared-types-shared-types"
+          ]
+        },
+        {
+          "file": "apps/backend/backend/tsconfig.app.json",
+          "hash": "17625342078775932124"
+        },
+        {
+          "file": "apps/backend/backend/tsconfig.json",
+          "hash": "14785519187273610601"
+        },
+        {
+          "file": "apps/backend/backend/tsconfig.spec.json",
           "hash": "9110660443763673899"
+        },
+        {
+          "file": "apps/backend/backend/webpack.config.js",
+          "hash": "17012323539658111789",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
         }
       ],
       "frontend-frontend-e2e": [
@@ -319,167 +1065,6 @@
         {
           "file": "apps/frontend/frontend-e2e/tsconfig.json",
           "hash": "2127856097714240704"
-        }
-      ],
-      "frontend-frontend": [
-        {
-          "file": "apps/frontend/frontend/eslint.config.js",
-          "hash": "3769833203182662347",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "apps/frontend/frontend/index.html",
-          "hash": "2323699249478598756"
-        },
-        {
-          "file": "apps/frontend/frontend/jest.config.ts",
-          "hash": "4040123938241034392"
-        },
-        {
-          "file": "apps/frontend/frontend/project.json",
-          "hash": "16050360358393362588"
-        },
-        {
-          "file": "apps/frontend/frontend/public/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/frontend/frontend/src/app/app.module.css",
-          "hash": "8887387885984320532"
-        },
-        {
-          "file": "apps/frontend/frontend/src/app/app.spec.tsx",
-          "hash": "13319677561221440912",
-          "deps": [
-            "npm:@testing-library/react"
-          ]
-        },
-        {
-          "file": "apps/frontend/frontend/src/app/app.tsx",
-          "hash": "6159067389145980167"
-        },
-        {
-          "file": "apps/frontend/frontend/src/app/nx-welcome.tsx",
-          "hash": "2348102959109701629"
-        },
-        {
-          "file": "apps/frontend/frontend/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/frontend/frontend/src/main.tsx",
-          "hash": "4731961929376199421",
-          "deps": [
-            "npm:react",
-            "npm:react-dom"
-          ]
-        },
-        {
-          "file": "apps/frontend/frontend/src/styles.css",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/frontend/frontend/tsconfig.app.json",
-          "hash": "6208278882108140805"
-        },
-        {
-          "file": "apps/frontend/frontend/tsconfig.json",
-          "hash": "14914432187709619859"
-        },
-        {
-          "file": "apps/frontend/frontend/tsconfig.spec.json",
-          "hash": "2037765505023514234"
-        },
-        {
-          "file": "apps/frontend/frontend/vite.config.ts",
-          "hash": "15059930447667534037",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "backend-backend": [
-        {
-          "file": "apps/backend/backend/eslint.config.js",
-          "hash": "14131162355527991697"
-        },
-        {
-          "file": "apps/backend/backend/jest.config.ts",
-          "hash": "7061322357606729110"
-        },
-        {
-          "file": "apps/backend/backend/project.json",
-          "hash": "4690325010761503882"
-        },
-        {
-          "file": "apps/backend/backend/src/app/app.controller.spec.ts",
-          "hash": "9499997688052526633",
-          "deps": [
-            "npm:@nestjs/testing"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/src/app/app.controller.ts",
-          "hash": "9005150069945785676",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/src/app/app.module.ts",
-          "hash": "3163250445227373966",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/src/app/app.service.spec.ts",
-          "hash": "8587461140686713758",
-          "deps": [
-            "npm:@nestjs/testing"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/src/app/app.service.ts",
-          "hash": "9967902337593410053",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/backend/backend/src/main.ts",
-          "hash": "11205222914964382693",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/core"
-          ]
-        },
-        {
-          "file": "apps/backend/backend/tsconfig.app.json",
-          "hash": "17625342078775932124"
-        },
-        {
-          "file": "apps/backend/backend/tsconfig.json",
-          "hash": "14785519187273610601"
-        },
-        {
-          "file": "apps/backend/backend/tsconfig.spec.json",
-          "hash": "9110660443763673899"
-        },
-        {
-          "file": "apps/backend/backend/webpack.config.js",
-          "hash": "17012323539658111789",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
         }
       ]
     }

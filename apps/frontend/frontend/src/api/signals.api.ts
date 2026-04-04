@@ -17,3 +17,17 @@ export async function generateSignal(symbol: string, timeframe: string): Promise
     const res = await axios.post(`${API_BASE}/signals/generate`, { symbol, timeframe });
     return res.data;
 }
+
+export interface OhlcvCandle {
+    openTime: number;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+    volume: string;
+}
+
+export async function fetchCandles(symbol: string, timeframe: string, limit = 200): Promise<OhlcvCandle[]> {
+    const res = await axios.get(`${API_BASE}/ohlcv/candles`, { params: { symbol, timeframe, limit } });
+    return res.data;
+}

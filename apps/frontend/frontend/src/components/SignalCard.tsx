@@ -61,7 +61,7 @@ export function SignalCard({ signal, isLoading, onRefresh }: Props) {
             </div>
 
             {/* AI Reasoning */}
-            {signal?.deepseekReasoning && (
+            {signal?.deepseekReasoning && signal.deepseekReasoning !== 'API error' && (
                 <div
                     style={{
                         background: 'var(--bg-elevated)',
